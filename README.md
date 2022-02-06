@@ -16,7 +16,7 @@ The API also demonstrates the following extra operation:
 
 • Get all the characters in a franchise.
 
-Getting Started
+## Getting Started
 
 Clone to a local directory.
 
@@ -26,13 +26,13 @@ Run migrations
 
 Run IIS Server
 
-Prerequisites
+ ## Prerequisites
 
 .NET Framework 5.0
 
 Visual Studio 2017/19 OR Visual Studio Code
 
 
-Author
+## Author
 
 *Mohamud Abdi Muhumed.
