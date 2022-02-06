@@ -1,7 +1,4 @@
-# MovieCharactersAPI
-
-MovieCharactersAPI
-.NET Core Web API
+# MovieCharactersAPI - .NET Core Web API
 This Wep API is intended for manipulation of movies, characters and franchises.
 The API demonstrates following  primary CRUD operation for the three entities mentioned above.
 The API also demonstrates the following extra operation:
