@@ -18,14 +18,14 @@ namespace MovieCharacters_API.Repositories.Franchises
 
 
 
-        public async Task<IEnumerable<Franchise>> GetFranchises()
+        public async Task<IEnumerable<Franchise>> GetFranchisesAsync()
         {
             return await _db.Franchises
                     .Include(m => m.Movies)
                     .ToListAsync();
 
         }
-        public async Task DeleteFranchise(int id)
+        public async Task DeleteFranchiseAsync(int id)
         {
 
             var francise = await _db.Franchises.FindAsync(id);
@@ -42,7 +42,7 @@ namespace MovieCharacters_API.Repositories.Franchises
 
         }
 
-        public async Task<Franchise> GetFranchise(int id)
+        public async Task<Franchise> GetFranchiseAsync(int id)
         {
 
             var franchise = await _db.Franchises.FindAsync(id);
@@ -56,20 +56,20 @@ namespace MovieCharacters_API.Repositories.Franchises
         }
 
 
-        public async Task<Franchise> PostFranchise(Franchise franchise)
+        public async Task<Franchise> PostFranchiseAsync(Franchise franchise)
         {
             _db.Franchises.Add(franchise);
             await _db.SaveChangesAsync();
             return franchise;
         }
 
-        public async Task PutFranchise(int id, Franchise franchise)
+        public async Task PutFranchiseAsync(int id, Franchise franchise)
         {
              _db.Entry(franchise).State = EntityState.Modified;
             await _db.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Movie>> GetMoviesInFranchise(int id)
+        public async Task<IEnumerable<Movie>> GetMoviesInFranchiseAsync(int id)
         {
             var franchise = await _db.Franchises
                             .Include(m => m.Movies)
@@ -84,7 +84,7 @@ namespace MovieCharacters_API.Repositories.Franchises
 
 
         }
-        public async Task<IEnumerable<Character>> GetCharactersInFranchise(int id)
+        public async Task<IEnumerable<Character>> GetCharactersInFranchiseAsync(int id)
         {
             var franchise = await _db.Franchises
                             .Include(m => m.Movies)
@@ -100,7 +100,7 @@ namespace MovieCharacters_API.Repositories.Franchises
 
         }
 
-        public async Task UpdateMovieInFranchise(int id, int[] Mids)
+        public async Task UpdateMovieInFranchiseAsync(int id, int[] Mids)
         {
             var franchise = await _db.Franchises
                              .Include(m => m.Movies)

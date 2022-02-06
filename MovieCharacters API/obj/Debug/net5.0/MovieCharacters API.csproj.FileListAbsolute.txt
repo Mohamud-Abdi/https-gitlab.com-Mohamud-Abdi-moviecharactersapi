@@ -141,3 +141,4 @@ C:\Users\MMuhum\source\repos\MovieCharacters API\MovieCharacters API\obj\Debug\n
 C:\Users\MMuhum\source\repos\MovieCharacters API\MovieCharacters API\obj\Debug\net5.0\MovieCharacters API.xml
 C:\Users\MMuhum\source\repos\MovieCharacters API\MovieCharacters API\obj\Debug\net5.0\MovieCharacters API.pdb
 C:\Users\MMuhum\source\repos\MovieCharacters API\MovieCharacters API\obj\Debug\net5.0\MovieCharacters API.genruntimeconfig.cache
+C:\Users\MMuhum\source\repos\MovieCharacters API\MovieCharacters API\obj\Debug\net5.0\MovieCharacters API.csproj.AssemblyReference.cache

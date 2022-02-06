@@ -6,11 +6,11 @@ namespace MovieCharacters_API.Repositories.Characters
 {
     public interface ICharacterRepository
     {
-        public Task<IEnumerable<Character>> GetCharacters();
-        public Task<Character> GetCharacter(int id);
-        public Task  PutCharacter(int id, Character character);
-        public Task<Character> PostCharacter(Character character);
-        public Task DeleteCharacter(int id);
+        public Task<IEnumerable<Character>> GetCharactersAsync();
+        public Task<Character> GetCharacterAsync(int id);
+        public Task  PutCharacterAsync(int id, Character character);
+        public Task<Character> PostCharacterAsync(Character character);
+        public Task DeleteCharacterAsync(int id);
         public bool CharacterExists(int id);
 
 

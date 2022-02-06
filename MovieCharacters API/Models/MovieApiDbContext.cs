@@ -25,9 +25,9 @@ namespace Movie_Characters_API.Models
             // Seed Data for Character
 
             modelBuilder.Entity<Character>().HasData(
-              new Character { Id = 1, FirstName = "Gorilla", LastName="Monk", Alias = "Monkey", Gender = "Male", Picture = "url" },
-              new Character { Id = 2, FirstName = "Adam", LastName = "Monk", Alias = "SuperMan", Gender = "Male", Picture = "url" },
-              new Character { Id = 3, FirstName = "Anthony", LastName = "Monk", Alias = "Marvel", Gender = "Male", Picture = "url" }
+              new Character { Id = 1, FirstName = "Idris", LastName="Elba", Alias = "Elb", Gender = "Male", Picture = "url" },
+              new Character { Id = 2, FirstName = "Isabelle", LastName = "Fuhrman", Alias = "Isa", Gender = "Female", Picture = "url" },
+              new Character { Id = 3, FirstName = "Zack", LastName = "Snyder", Alias = "ZS", Gender = "Male", Picture = "url" }
                 );
 
 
@@ -37,45 +37,45 @@ namespace Movie_Characters_API.Models
                 new Movie
                 {
                     Id = 1,
-                    Title = "Godzilla vs. Kong",
-                    Genre = "Test",
+                    Title = "The Novice",
+                    Genre = "Drama",
                     ReleaseYear = 2021,
-                    Director = "Adam Wingard",
-                    PictureURL = "https://viniloblog.com/wp-content/uploads/2021/02/godzilla-vs-kong-luchan.jpg",
-                    TrailerUrl = "https://youtu.be/4adYOnlWYQg?t=21",
+                    Director = "Lauren Hadaway",
+                    PictureURL = "https://www.imdb.com/title/tt11131464/?ref_=ttls_li_tt",
+                    TrailerUrl = "https://www.imdb.com/title/tt11131464/?ref_=ttls_li_tt",
                     FranchiseId = 1
                 });
             modelBuilder.Entity<Movie>().HasData(
                 new Movie
                 {
                     Id = 2,
-                    Title = "Venom: Let There Be Carnage",
-                    Genre = "test",
+                    Title = "Zack Snyder's Justice League ",
+                    Genre = "Thriller",
                     ReleaseYear = 2021,
-                    Director = "Andy Serkis",
-                    PictureURL = "https://tse4.mm.bing.net/th/id/OIP.Ji1Doi8I9f8DrIxEW33BFwHaFj?pid=ImgDet&rs=1",
-                    TrailerUrl = "https://www.imdb.com/video/vi1533394969?playlistId=tt7097896&ref_=tt_pr_ov_vi",
+                    Director = "Zack Snyder",
+                    PictureURL = "https://www.imdb.com/title/tt12361974/?ref_=ttls_li_tt",
+                    TrailerUrl = "https://www.imdb.com/title/tt12361974/?ref_=ttls_li_tt",
                     FranchiseId = 2
                 });
             modelBuilder.Entity<Movie>().HasData(
                 new Movie
                 {
                     Id = 3,
-                    Title = "Daredevil",
-                    Genre = "test",
-                    ReleaseYear = 2003,
-                    Director = "Mark Steven Johnson",
-                    PictureURL = "https://i.ytimg.com/vi/7VZAiCvenmo/maxresdefault.jpg",
-                    TrailerUrl = "https://www.imdb.com/video/vi2778726681?playlistId=tt0287978&ref_=tt_ov_vi",
+                    Title = "Spider-Man: No Way Home ",
+                    Genre = "Action",
+                    ReleaseYear = 2021,
+                    Director = "John Watts",
+                    PictureURL = "https://www.imdb.com/title/tt10872600/?ref_=ttls_li_tt",
+                    TrailerUrl = "https://www.imdb.com/title/tt10872600/?ref_=ttls_li_tt",
                     FranchiseId = 3
                 });
 
 
             // Seed Data for Franchises
 
-            modelBuilder.Entity<Franchise>().HasData(new Franchise { Id = 1, Name = "G&K", Description = "G&K movies ar very entertaining and abit scary." });
-            modelBuilder.Entity<Franchise>().HasData(new Franchise { Id = 2, Name = "Venom", Description = "American superhero film featuring the Marvel Comics character Venom," });
-            modelBuilder.Entity<Franchise>().HasData(new Franchise { Id = 3, Name = "Dare", Description = " Movie is Based on the Marvel Comics superhero of the same name" });
+            modelBuilder.Entity<Franchise>().HasData(new Franchise { Id = 1, Name = "Star wars", Description = "G&K movies ar very entertaining and abit scary." });
+            modelBuilder.Entity<Franchise>().HasData(new Franchise { Id = 2, Name = "Harry Potter", Description = "American superhero film featuring the Marvel Comics character Venom," });
+            modelBuilder.Entity<Franchise>().HasData(new Franchise { Id = 3, Name = "The Matrix", Description = " Movie is Based on the Marvel Comics superhero of the same name" });
 
 
 

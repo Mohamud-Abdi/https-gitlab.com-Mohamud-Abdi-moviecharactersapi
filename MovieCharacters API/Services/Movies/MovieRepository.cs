@@ -19,14 +19,14 @@ namespace MovieCharacters_API.Repositories.Movies
 
 
 
-        public async Task<IEnumerable<Movie>> GetMovies()
+        public async Task<IEnumerable<Movie>> GetMoviesAsync()
         {
             return await _db.Movies
                 .Include(c => c.Characters)
                 .ToListAsync();
 
         }
-        public async Task<Movie> GetMovie(int id)
+        public async Task<Movie> GetMovieAsync(int id)
         {
             var movie = await _db.Movies.FindAsync(id);
             if (movie == null)
@@ -34,14 +34,14 @@ namespace MovieCharacters_API.Repositories.Movies
             return movie;
 
         }
-        public async Task PutMovie(int id, Movie movie)
+        public async Task PutMovieAsync(int id, Movie movie)
         {
 
             _db.Entry(movie).State = EntityState.Modified;
             await _db.SaveChangesAsync();
         }
 
-        public async Task<Movie> PostMovie(Movie movie)
+        public async Task<Movie> PostMovieAsync(Movie movie)
         {
             _db.Movies.Add(movie);
             await _db.SaveChangesAsync();
@@ -49,7 +49,7 @@ namespace MovieCharacters_API.Repositories.Movies
 
 
         }
-        public async Task DeleteMovie(int id)
+        public async Task DeleteMovieAsync(int id)
         {
             var movie = await _db.Movies.FindAsync(id);
             _db.Movies.Remove(movie);
@@ -63,7 +63,7 @@ namespace MovieCharacters_API.Repositories.Movies
 
         }
 
-        public async Task<IEnumerable<Character>> GetCharactersInMovie(int id)
+        public async Task<IEnumerable<Character>> GetCharactersInMovieAsync(int id)
         {
             var movies = await _db.Movies
                         .Include(c => c.Characters)
@@ -81,7 +81,7 @@ namespace MovieCharacters_API.Repositories.Movies
 
         }
 
-        public async Task UpdateCharacterInMovie(int id, int[] characterId)
+        public async Task UpdateCharacterInMovieAsync(int id, int[] characterId)
         {
 
             var movie = await _db.Movies

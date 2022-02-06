@@ -41,7 +41,7 @@ namespace MovieCharacters_API.Controllers
         [HttpGet]
        public async Task<ActionResult<IEnumerable<FranchiseReadDTO>>> GetFranchises()
         { 
-                return _mapper.Map<List<FranchiseReadDTO>>( await _franchiseRepository.GetFranchises());
+                return _mapper.Map<List<FranchiseReadDTO>>( await _franchiseRepository.GetFranchisesAsync());
         }
 
 
@@ -58,7 +58,7 @@ namespace MovieCharacters_API.Controllers
         {
 
 
-            return _mapper.Map<List<MovieReadDTO>>(await _franchiseRepository.GetMoviesInFranchise(id));
+            return _mapper.Map<List<MovieReadDTO>>(await _franchiseRepository.GetMoviesInFranchiseAsync(id));
 
 
         }
@@ -75,7 +75,7 @@ namespace MovieCharacters_API.Controllers
 
 
 
-            return  _mapper.Map<List<CharacterReadDTO>>( await _franchiseRepository.GetCharactersInFranchise(id)) ;
+            return  _mapper.Map<List<CharacterReadDTO>>( await _franchiseRepository.GetCharactersInFranchiseAsync(id)) ;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace MovieCharacters_API.Controllers
         [HttpPut("{id}/movies")]
         public  Task UpdateMovieInFranchise(int id, int[] Mids)
         {
-           return   _franchiseRepository.UpdateMovieInFranchise(id, Mids);
+           return   _franchiseRepository.UpdateMovieInFranchiseAsync(id, Mids);
         }
 
 
@@ -103,7 +103,7 @@ namespace MovieCharacters_API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<FranchiseReadDTO>> GetFranchise(int id)
         {
-            var franchise = _mapper.Map<FranchiseReadDTO>(await _franchiseRepository.GetFranchise(id));
+            var franchise = _mapper.Map<FranchiseReadDTO>(await _franchiseRepository.GetFranchiseAsync(id));
 
             if (franchise == null)
             {
@@ -133,7 +133,7 @@ namespace MovieCharacters_API.Controllers
             try
             {
 
-              await  _franchiseRepository.PutFranchise(id, franchiseDomain);
+              await  _franchiseRepository.PutFranchiseAsync(id, franchiseDomain);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -160,7 +160,7 @@ namespace MovieCharacters_API.Controllers
         {
 
             Franchise createDomain= _mapper.Map<Franchise>(franchise);
-           await _franchiseRepository.PostFranchise(createDomain);
+           await _franchiseRepository.PostFranchiseAsync(createDomain);
            return CreatedAtAction("GetFranchise", new { id = franchise }, franchise);
         }
         /// <summary>
@@ -174,7 +174,7 @@ namespace MovieCharacters_API.Controllers
         {
            
 
-           await  _franchiseRepository.DeleteFranchise(id);  
+           await  _franchiseRepository.DeleteFranchiseAsync(id);  
             
 
             return NoContent();

@@ -8,14 +8,14 @@ namespace MovieCharacters_API.Repositories.Movies
     {
 
 
-        public Task<IEnumerable<Movie>> GetMovies();
-        public Task<Movie> GetMovie(int id);
-        public Task PutMovie(int id, Movie movie);
-        public Task<Movie> PostMovie(Movie movie);
-        public Task DeleteMovie(int id);
+        public Task<IEnumerable<Movie>> GetMoviesAsync();
+        public Task<Movie> GetMovieAsync(int id);
+        public Task PutMovieAsync(int id, Movie movie);
+        public Task<Movie> PostMovieAsync(Movie movie);
+        public Task DeleteMovieAsync(int id);
         public bool MovieExists(int id);
-        public Task<IEnumerable<Character>> GetCharactersInMovie(int id);
-        public Task UpdateCharacterInMovie(int id, int[] character);
+        public Task<IEnumerable<Character>> GetCharactersInMovieAsync(int id);
+        public Task UpdateCharacterInMovieAsync(int id, int[] character);
 
 
 

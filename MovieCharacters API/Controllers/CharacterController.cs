@@ -39,7 +39,7 @@ namespace MovieCharacters_API
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CharacterReadDTO>>> GetCharacters()
         {
-            return _mapper.Map<List<CharacterReadDTO>>(await _characterRepository.GetCharacters());
+            return _mapper.Map<List<CharacterReadDTO>>(await _characterRepository.GetCharactersAsync());
         }
 
 
@@ -53,7 +53,7 @@ namespace MovieCharacters_API
         [HttpGet("{id}")]
         public async Task<ActionResult<CharacterReadDTO>> GetCharacter(int id)
         {
-            return _mapper.Map<CharacterReadDTO>( await _characterRepository.GetCharacter(id));
+            return _mapper.Map<CharacterReadDTO>( await _characterRepository.GetCharacterAsync(id));
             
         }
 
@@ -77,7 +77,7 @@ namespace MovieCharacters_API
                 return BadRequest();
             }
 
-            await _characterRepository.PutCharacter(id, domainCreate);
+            await _characterRepository.PutCharacterAsync(id, domainCreate);
         
            
             return NoContent();
@@ -92,7 +92,7 @@ namespace MovieCharacters_API
         public async Task<ActionResult<Character>> PostCharacter(CharacterCreateDTO character)
         {
             Character domainCreate = _mapper.Map<Character>(character);
-            await _characterRepository.PostCharacter( domainCreate);
+            await _characterRepository.PostCharacterAsync( domainCreate);
 
 
           return CreatedAtAction("GetCharacter", new { id = domainCreate.Id }, character);
@@ -109,7 +109,7 @@ namespace MovieCharacters_API
         {
 
 
-          await  _characterRepository.DeleteCharacter(id);
+          await  _characterRepository.DeleteCharacterAsync(id);
 
             return  NoContent();
         }

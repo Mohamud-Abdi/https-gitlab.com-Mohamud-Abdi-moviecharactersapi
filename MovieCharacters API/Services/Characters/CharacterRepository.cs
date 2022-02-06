@@ -18,14 +18,14 @@ namespace MovieCharacters_API.Repositories.Characters
         }
 
 
-        public async Task<IEnumerable<Character>> GetCharacters()
+        public async Task<IEnumerable<Character>> GetCharactersAsync()
         {
             return await _db.Characters
                    .Include(m => m.Movies)
                     .ToListAsync();
         }
 
-        public async Task<Character> GetCharacter(int id)
+        public async Task<Character> GetCharacterAsync(int id)
         {
 
             var character = await _db.Characters.FindAsync(id);
@@ -37,7 +37,7 @@ namespace MovieCharacters_API.Repositories.Characters
 
             return character;
         }
-        public async Task PutCharacter(int id, Character character)
+        public async Task PutCharacterAsync(int id, Character character)
         {
 
             _db.Entry(character).State = EntityState.Modified;
@@ -46,7 +46,7 @@ namespace MovieCharacters_API.Repositories.Characters
         }
 
 
-        public async Task DeleteCharacter(int id)
+        public async Task DeleteCharacterAsync(int id)
         {
             var character = await _db.Characters.FindAsync(id);
             _db.Characters.Remove(character);
@@ -56,7 +56,7 @@ namespace MovieCharacters_API.Repositories.Characters
 
 
 
-        public async Task<Character> PostCharacter(Character character)
+        public async Task<Character> PostCharacterAsync(Character character)
         {
             _db.Characters.Add(character);
             await _db.SaveChangesAsync();

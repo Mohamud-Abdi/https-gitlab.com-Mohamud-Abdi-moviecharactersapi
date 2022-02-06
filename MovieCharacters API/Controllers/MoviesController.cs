@@ -42,7 +42,7 @@ namespace MovieCharacters_API.Controllers
         public async Task<ActionResult<IEnumerable<MovieReadDTO>>> GetMovies()
         {
 
-            return _mapper.Map<List<MovieReadDTO>>(await _movieRepository.GetMovies());
+            return _mapper.Map<List<MovieReadDTO>>(await _movieRepository.GetMoviesAsync());
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace MovieCharacters_API.Controllers
         [HttpGet("{id}/characters")]
         public async Task<IEnumerable<CharacterReadDTO>> GetCharactersInMovie(int id)
         {
-            return _mapper.Map<List<CharacterReadDTO>>( await _movieRepository.GetCharactersInMovie(id)); 
+            return _mapper.Map<List<CharacterReadDTO>>( await _movieRepository.GetCharactersInMovieAsync(id)); 
         }
 
 
@@ -68,7 +68,7 @@ namespace MovieCharacters_API.Controllers
         [HttpPut("{id}/characters")]
         public async Task UpdateCharacterInMovie(int id, int[] characterIds)
         {
-            await _movieRepository.UpdateCharacterInMovie(id, characterIds);
+            await _movieRepository.UpdateCharacterInMovieAsync(id, characterIds);
          }
 
 
@@ -83,7 +83,7 @@ namespace MovieCharacters_API.Controllers
         public async Task<ActionResult<MovieReadDTO>> GetMovie(int id)
         {
 
-            var movie = _mapper.Map<MovieReadDTO>( await _movieRepository.GetMovie(id));
+            var movie = _mapper.Map<MovieReadDTO>( await _movieRepository.GetMovieAsync(id));
 
             if (movie == null)
             {
@@ -111,7 +111,7 @@ namespace MovieCharacters_API.Controllers
            Movie domainMovie = _mapper.Map<Movie>(movie);
             try
             {
-              await  _movieRepository.PutMovie(id, domainMovie);
+              await  _movieRepository.PutMovieAsync(id, domainMovie);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -139,7 +139,7 @@ namespace MovieCharacters_API.Controllers
 
             Movie domain = _mapper.Map<Movie>(movie);
 
-           await _movieRepository.PostMovie(domain); 
+           await _movieRepository.PostMovieAsync(domain); 
 
             return CreatedAtAction("GetMovie", new { id = movie }, movie);
         }
@@ -152,7 +152,7 @@ namespace MovieCharacters_API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMovie(int id)
         {
-           await _movieRepository.DeleteMovie(id);
+           await _movieRepository.DeleteMovieAsync(id);
             return NoContent();
         }
 
