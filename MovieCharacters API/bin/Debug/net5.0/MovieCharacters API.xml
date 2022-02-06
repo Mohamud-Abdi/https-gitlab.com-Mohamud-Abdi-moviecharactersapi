@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MovieCharacters API</name>
+    </assembly>
+    <members>
+        <member name="M:MovieCharacters_API.CharacterController.GetCharacters">
+            <summary>
+             API call to list all the characters in the system.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.CharacterController.GetCharacter(System.Int32)">
+            <summary>
+              Fetches the character with the given id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.CharacterController.PutCharacter(System.Int32,Movie_Characters_API.Models.DTOs.Character.CharacterUpdateDTO)">
+            <summary>
+             Updates the character with the given id.
+            </summary>
+            <param name="id"></param>
+            <param name="character"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.CharacterController.PostCharacter(Movie_Characters_API.Models.DTOs.Character.CharacterCreateDTO)">
+             <summary>
+            Posts a Character to the database.
+             </summary>
+             <param name="character"></param>
+             <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.CharacterController.DeleteCharacter(System.Int32)">
+            <summary>
+            
+             Deletes the character with the given id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.CharacterController.CharacterExists(System.Int32)">
+            <summary>
+            Checks if character with the given id exists 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.GetFranchises">
+            <summary>
+            Lists all the franchises in the system.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.GetMoviesInFranchise(System.Int32)">
+            <summary>
+            Get all the movies in the  given Franchise (use franchise id).
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.GetCharactersInFranchise(System.Int32)">
+            <summary>
+            Get all the characters in the given franchis
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.UpdateMovieInFranchise(System.Int32,System.Int32[])">
+            <summary>
+            updating list of movies in franchise.
+            </summary>
+            <param name="id"></param>
+            <param name="Mids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.GetFranchise(System.Int32)">
+            <summary>
+            Returns a franchise with the given id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.PutFranchise(System.Int32,Movie_Characters_API.Models.DTOs.Franchise.FranchiseUpdateDTo)">
+            <summary>
+             Updates a Franchise with the given id.
+            </summary>
+            <param name="id"></param>
+            <param name="franchise"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.PostFranchise(Movie_Characters_API.Models.DTOs.Franchise.FranchiseCreateDTO)">
+            <summary>
+            Posts  a franchise to the database.
+            </summary>
+            <param name="franchise"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.DeleteFranchise(System.Int32)">
+            <summary>
+            Deletes a fracnhise with the given id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.FranchisesController.FranchiseExists(System.Int32)">
+            <summary>
+            Checks if a Franchise exists in the system.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.GetMovies">
+            <summary>
+              Lists all the Movies in the system.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.GetCharactersInMovie(System.Int32)">
+            <summary>
+            Get characters in a movie.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.UpdateCharacterInMovie(System.Int32,System.Int32[])">
+            <summary>
+            update list of characters in a movie.
+            </summary>
+            <param name="id"></param>
+            <param name="characterIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.GetMovie(System.Int32)">
+            <summary>
+            
+            Returns the Movie with the given id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.PutMovie(System.Int32,Movie_Characters_API.Models.DTOs.Movies.MovieUpdateDTO)">
+            <summary>
+            Updates the Movie with the given id.
+            </summary>
+            <param name="id"></param>
+            <param name="movie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.PostMovie(Movie_Characters_API.Models.DTOs.Movies.MovieCreateDTO)">
+            <summary>
+            Posts a Movie to the database.
+            </summary>
+            <param name="movie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.DeleteMovie(System.Int32)">
+            <summary>
+             Deletes the Movie with the passed id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MovieCharacters_API.Controllers.MoviesController.MovieExists(System.Int32)">
+            <summary>
+            Checks if movie exists
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
